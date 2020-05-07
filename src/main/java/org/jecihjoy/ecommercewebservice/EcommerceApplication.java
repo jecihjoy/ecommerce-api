@@ -5,6 +5,7 @@ import org.jecihjoy.ecommercewebservice.Models.Product;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class EcommerceApplication {
@@ -13,6 +14,7 @@ public class EcommerceApplication {
 		SpringApplication.run(EcommerceApplication.class, args);
 	}
 
+	@Bean
 	CommandLineRunner runner(ProductDao productDao){
 		return args -> {
 			Product product = new Product(
@@ -29,6 +31,7 @@ public class EcommerceApplication {
 					"Bag2",
 					"Yellow bag pack",
 					3000.0,
+
 					3200.0,
 					"test1.png",
 					"test1.png",
