@@ -14,7 +14,7 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Long product_id;
+    Long productId;
     String product_name;
     @Lob
     String product_description;
@@ -41,12 +41,12 @@ public class Product {
         this.imageFour = imageFour;
     }
 
-    public Long getProduct_id() {
-        return product_id;
+    public Long getProductId() {
+        return productId;
     }
 
-    public void setProduct_id(Long product_id) {
-        this.product_id = product_id;
+    public void setProductId(Long productId) {
+        this.productId = productId;
     }
 
     public String getProduct_name() {

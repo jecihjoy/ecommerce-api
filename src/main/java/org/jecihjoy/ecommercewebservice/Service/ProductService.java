@@ -9,6 +9,6 @@ public interface ProductService {
 
     Collection<Product> getAllProducts();
 
-    Optional<Product> getProducrById(Long id);
+    Optional<Product> getProductById(Long id);
 
 }

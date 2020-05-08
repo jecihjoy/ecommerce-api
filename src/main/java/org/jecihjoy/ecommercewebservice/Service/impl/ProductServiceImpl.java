@@ -15,12 +15,16 @@ public class ProductServiceImpl implements ProductService {
     @Autowired
     private ProductDao productDao;
 
+    public void setProductDao(ProductDao productDao) {
+        this.productDao = productDao;
+    }
+
     @Override
     public Collection<Product> getAllProducts() {
         return productDao.findAll();
     }
 
     @Override
-    public Optional<Product> getProducrById(Long id) { return productDao.findById(id);
+    public Optional<Product> getProductById(Long id) { return productDao.findById(id);
     }
 }

@@ -27,6 +27,6 @@ public class ProductController {
 
     @RequestMapping(value = "{id}", method = RequestMethod.GET)
     public Optional<Product> getProductById(@PathVariable @NotNull Long id){
-        return productService.getProducrById(id);
+        return productService.getProductById(id);
     }
 }
