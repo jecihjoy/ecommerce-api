@@ -19,7 +19,7 @@ public class EcommerceApplication {
 		return args -> {
 			Product product = new Product(
 					"Bag",
-					"Yellow bag pack",
+					"black bag pack",
 					3000.0,
 					3200.0,
 					"test1.png",
@@ -29,7 +29,7 @@ public class EcommerceApplication {
 			productDao.save(product);
 			Product product2 = new Product(
 					"Bag2",
-					"Yellow bag pack",
+					"black bag pack",
 					3000.0,
 
 					3200.0,

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
+import java.util.Optional;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -17,5 +18,9 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Collection<Product> getAllProducts() {
         return productDao.findAll();
+    }
+
+    @Override
+    public Optional<Product> getProducrById(Long id) { return productDao.findById(id);
     }
 }
