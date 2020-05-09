@@ -3,16 +3,18 @@ package org.jecihjoy.ecommercewebservice.Service;
 import org.jecihjoy.ecommercewebservice.Dao.ProductDao;
 import org.jecihjoy.ecommercewebservice.Models.Product;
 import org.jecihjoy.ecommercewebservice.Service.impl.ProductServiceImpl;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mock;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.Matchers.greaterThanOrEqualTo;
 import static org.hamcrest.Matchers.is;
 import static org.mockito.Mockito.when;
-import org.mockito.junit.MockitoJUnitRunner;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.TestConfiguration;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.context.annotation.Bean;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -21,19 +23,23 @@ import java.util.Optional;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 
-@RunWith(MockitoJUnitRunner.class)
+@RunWith(SpringRunner.class)
 public class ProductServiceImplTest {
 
-    @Mock
-    private ProductDao productDao;
+    @TestConfiguration
+    static class ProductServiceImplTestContextConfiguration {
 
-    private ProductServiceImpl productService;
-
-    @Before
-    public  void setup() {
-        productService = new ProductServiceImpl();
-        productService.setProductDao(productDao);
+        @Bean
+        public ProductService productService() {
+            return new ProductServiceImpl();
+        }
     }
+
+    @Autowired
+    private ProductService productService;
+
+    @MockBean
+    private ProductDao productDao;
 
     @Test
     public void shouldGetProductById() {
