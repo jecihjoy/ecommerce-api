@@ -44,11 +44,11 @@ public class ProductServiceImplTest {
     @Test
     public void shouldGetProductById() {
         Product product = new Product("Bag", "black bag pack", 3000.0, 3200.0, null, null, null,null);
-        product.setProductId((long) 1);
+        product.setProductId(1L);
 
         when(productDao.findById((long) 1)).thenReturn(Optional.of(product));
 
-        Optional<Product> result = productService.getProductById((long)1);
+        Optional<Product> result = productService.getProductById(1L);
         assertThat(result.isPresent(), is(true));
         assertThat(result.get().getProductId(), equalTo(product.getProductId()));
     }
