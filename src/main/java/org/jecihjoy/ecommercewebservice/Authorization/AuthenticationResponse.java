@@ -1,5 +1,9 @@
 package org.jecihjoy.ecommercewebservice.Authorization;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@Getter
 public class AuthenticationResponse {
 
     private final String jwtToken;
@@ -8,7 +12,4 @@ public class AuthenticationResponse {
         this.jwtToken = jwtToken;
     }
 
-    public String getJwtToken() {
-        return jwtToken;
-    }
 }
